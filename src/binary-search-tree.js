@@ -105,11 +105,13 @@ module.exports = class BinarySearchTree {
     if (this.rootOfTree === null) {
       return null;
     } else {
-      while (this.rootOfTree.left !== null) {
-        this.rootOfTree = this.rootOfTree.left;
+      let copyOfRootOfTree = JSON.parse(JSON.stringify(this.rootOfTree));
+
+      while (copyOfRootOfTree.left !== null) {
+        copyOfRootOfTree = copyOfRootOfTree.left;
       }
 
-      return this.rootOfTree.data;
+      return copyOfRootOfTree.data;
     }
   }
 
@@ -117,11 +119,13 @@ module.exports = class BinarySearchTree {
     if (this.rootOfTree === null) {
       return null;
     } else {
-      while (this.rootOfTree.right !== null) {
-        this.rootOfTree = this.rootOfTree.right;
+      let copyOfRootOfTree = JSON.parse(JSON.stringify(this.rootOfTree));
+
+      while (copyOfRootOfTree.right !== null) {
+        copyOfRootOfTree = copyOfRootOfTree.right;
       }
 
-      return this.rootOfTree.data;
+      return copyOfRootOfTree.data;
     }
   }
 
